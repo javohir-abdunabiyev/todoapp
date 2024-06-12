@@ -82,15 +82,14 @@ function Ul(category) {
     remove_div.onclick = () => {
 
         const idx = store.categories.findIndex(categ => categ.title === category);
-
+    
         if (idx !== -1) {
-
-            store.todos.splice(idx)
-
-            store.categories.splice(idx, 1);
+            store.categories.splice(idx, 1); // изменено здесь
             main_div.remove();
+            store.todos.splice(idx)
         }
     };
+    
 
 
     main_div.classList.add("category")
